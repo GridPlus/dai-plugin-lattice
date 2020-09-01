@@ -1,0 +1,19 @@
+{
+  "name": "dai-plugin-lattice",
+  "version": "0.0.0",
+  "description": "dai.js plugin for use with the GridPlus Lattice1 hardware wallet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GridPlus/dai-plugin-lattice.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GridPlus/dai-plugin-lattice/issues"
+  },
+  "homepage": "https://github.com/GridPlus/dai-plugin-lattice#readme"
+}
