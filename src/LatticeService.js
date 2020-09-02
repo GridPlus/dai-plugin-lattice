@@ -1,5 +1,6 @@
 import { LocalService } from '@makerdao/services-core';
 import LatticeHookedWalletSubprovider from './LatticeHookedWalletSubprovider';
+import LatticeKeyring from 'eth-lattice-keyring'
 
 export default class LatticeService extends LocalService {
   constructor(name = 'lattice') {
@@ -12,9 +13,15 @@ export default class LatticeService extends LocalService {
     const network = chainIds[networkID] ? chainIds[networkID] : 'mainnet';
     const name = 'Maker';
     this.get('accounts').addAccountType('lattice', async settings => {
-      const subprovider = new LatticeHookedWalletSubprovider({network, name, ...settings});
-      const address = await subprovider.getAccounts()[0];
-      return { subprovider, address };
+      const opts = { network, name, ...settings };
+      // Setup Lattice keyring
+      // NOTE: Lattice1 v1 only provides the first ETH address
+      const keyring = new LatticeKeyring(opts);
+      await keyring.addAccounts(1)
+      // Setup the subprovider and get the first address
+      const subprovider = new LatticeHookedWalletSubprovider({keyring, ...opts});
+      const addresses = await subprovider.getAccounts();
+      return { subprovider, address: addresses[0] };
     });
   }
 }
