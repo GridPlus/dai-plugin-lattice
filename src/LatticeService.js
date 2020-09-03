@@ -9,11 +9,11 @@ export default class LatticeService extends LocalService {
 
   // eslint-disable-next-line no-unused-vars
   initialize(settings) {
-    const networkID = this.get('web3').networkId();
-    const network = chainIds[networkID] ? chainIds[networkID] : 'mainnet';
+    const networkId = this.get('web3').networkId();
+    const network = chainIds[networkId] ? chainIds[networkId] : 'mainnet';
     const name = 'Maker';
     this.get('accounts').addAccountType('lattice', async settings => {
-      const opts = { network, name, ...settings };
+      const opts = { network, networkId, name, ...settings };
       // Setup Lattice keyring
       // NOTE: Lattice1 v1 only provides the first ETH address
       const keyring = new LatticeKeyring(opts);

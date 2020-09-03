@@ -1,6 +1,6 @@
 {
   "name": "dai-plugin-lattice",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "dai.js plugin for use with the GridPlus Lattice1 hardware wallet",
   "main": "src/index.js",
   "scripts": {
