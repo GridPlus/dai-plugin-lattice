@@ -1,6 +1,6 @@
 {
   "name": "dai-plugin-lattice",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "dai.js plugin for use with the GridPlus Lattice1 hardware wallet",
   "main": "src/index.js",
   "scripts": {
@@ -18,7 +18,7 @@
   "homepage": "https://github.com/GridPlus/dai-plugin-lattice#readme",
   "dependencies": {
     "@makerdao/services-core": "^0.10.0",
-    "eth-lattice-keyring": "^0.1.7",
+    "eth-lattice-keyring": "^0.2.7",
     "web3-provider-engine": "^15.0.12"
   }
 }
